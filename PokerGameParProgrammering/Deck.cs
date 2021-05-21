@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System;
 
 namespace PokerGameParProgrammering
 {
-    class Deck
+    internal class Deck
     {
-
-        public List<Card> cardDeck { get; set; }
-        private List<string> uniCodeRepresent = new List<string>()
+        private readonly string[] uniCodeRepresent = new string[]
         {
             //Spader
             "U+1F0A1", "U+1F0A2", "U+1F0A3", "U+1F0A4", "U+1F0A5", "U+1F0A6", "U+1F0A7", "U+1F0A8", "U+1F0A9", "U+1F0AA", "U+1F0AB", "U+1F0AC", "U+1F0AD","U+1F0AE",
@@ -22,12 +17,22 @@ namespace PokerGameParProgrammering
             "U+1F0D1", "U+1F0D2", "U+1F0D3", "U+1F0D4", "U+1F0D5", "U+1F0D6", "U+1F0D7", "U+1F0D8", "U+1F0D9", "U+1F0DA", "U+1F0DB", "U+1F0DC", "U+1F0DD", "U+1F0DE",
         };
 
-
-
         public Deck()
         {
-            cardDeck = new List<Card>();
+            int uni = 0;
+            CardDeck = new List<Card>();
+            //Färger
+            for (int i = 0; i < 4; ++i)
+            {
+                //Värden
+                for (int j = 0; j < 13; ++j)
+                {
+                    CardDeck.Add(new Card(uniCodeRepresent[uni], (CardColour)i, (Value)j));
+                    ++uni;
+                }
+            }
         }
 
+        public List<Card> CardDeck { get; set; }
     }
 }

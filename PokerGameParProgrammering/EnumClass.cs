@@ -1,15 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PokerGameParProgrammering
+﻿namespace PokerGameParProgrammering
 {
-    public enum CardColours
+    public enum CardColour
     {
-
+        Spader,
+        Klöver,
+        Hjärter,
+        Ruter
     }
 
-
+    public enum Value
+    {
+        Ess,
+        Två,
+        Tre,
+        Fyra,
+        Fem,
+        Sex,
+        Sju,
+        Åtta,
+        Nio,
+        Tio,
+        Knekt,
+        Drottning,
+        Kung
+    }
 }

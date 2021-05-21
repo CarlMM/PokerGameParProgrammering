@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PokerGameParProgrammering
+﻿namespace PokerGameParProgrammering
 {
-
-    class Card
+    internal class Card
     {
+        private string cardName;
 
-
-        public Card()
+        public Card(string unicode, CardColour cardColour, Value value)
         {
-
+            Unicode = unicode;
+            CardColour = cardColour;
+            Value = value;
+            cardName = this.CardColour.ToString() + " " + this.Value.ToString();
         }
 
+        public string Unicode { get; set; }
+        public CardColour CardColour { get; set; }
+        public Value Value { get; set; }
+        public string CardName { get => cardName; }
     }
 }
