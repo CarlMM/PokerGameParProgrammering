@@ -16,7 +16,17 @@ namespace PokerGameParProgrammering
             {
                 Console.WriteLine($"{card.Unicode} {card.CardName}");
             }
-            Console.ReadLine();
+            
+
+
+            Console.WriteLine("-----------------------------");
+
+            deck.ShuffleDeck(deck.CardDeck);
+
+            foreach (var card in deck.CardDeck)
+            {
+                Console.WriteLine($"{card.Unicode} {card.CardName}");
+            }
         }
     }
 }

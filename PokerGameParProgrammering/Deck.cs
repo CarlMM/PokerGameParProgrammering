@@ -5,6 +5,9 @@ namespace PokerGameParProgrammering
 {
     internal class Deck
     {
+
+        Random cardRandom = new Random();
+
         private readonly string[] uniCodeRepresent = new string[]
         {
             //Spader
@@ -34,5 +37,24 @@ namespace PokerGameParProgrammering
         }
 
         public List<Card> CardDeck { get; set; }
+
+
+        public List<Card> ShuffleDeck(List<Card> cardDeck)
+        {
+            List<Card> cardDeck2 = new List<Card>();
+            
+            
+                for(int y = 0; y < cardDeck.Count; ++y)
+                {
+                    int secondDeckIndex = cardRandom.Next(0,51);
+                    cardDeck2 = cardDeck;
+                    cardDeck[y] = cardDeck[secondDeckIndex];
+                    cardDeck[secondDeckIndex] = cardDeck2[y];
+                }
+            
+
+            return cardDeck2;
+           
+        }
     }
 }
